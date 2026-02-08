@@ -123,15 +123,3 @@ body {
     border-radius: 8px;
     background: #f6f8fa;
 }
-
-
-@media (max-width: 900px) {
-    .pricing {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .addons-grid {
-        grid-template-columns: 1fr;
-    }
-}

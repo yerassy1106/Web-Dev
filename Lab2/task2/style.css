@@ -127,10 +127,3 @@ body {
     position: absolute;
     left: -10000px;
 }
-
-
-@media (max-width: 900px) {
-    .phone {
-        display: none;
-    }
-}
