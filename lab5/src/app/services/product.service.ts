@@ -11,11 +11,11 @@ export class ProductService {
     { id: 1, name: 'Smartphones' },
     { id: 2, name: 'Laptops' },
     { id: 3, name: 'Headphones' },
-    { id: 4, name: 'Tablets' }
+    { id: 4, name: 'Tablets' },
+    { id: 5, name: 'roooto'}
   ];
 
   products: Product[] = [
-    // --- SMARTPHONES (categoryId: 1) ---
     {
       id: 1,
       name: 'iPhone 15',
@@ -37,6 +37,28 @@ export class ProductService {
       link: 'https://kaspi.kz/shop/p/samsung-galaxy-s23-256gb-108869906/',
       likes: 0,
       categoryId: 1
+    },
+    {
+      id: 2,
+      name: 'Samsung Galaxy S23',
+      description: 'Flagship Samsung phone',
+      price: 420000,
+      rating: 4.8,
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Gw1LbHCTLzg8t1AEI7JOzUFV_s2xdewoCw&s',
+      link: 'https://kaspi.kz/shop/p/samsung-galaxy-s23-256gb-108869906/',
+      likes: 0,
+      categoryId: 5
+    },
+    {
+      id: 2,
+      name: 'Samsung Galaxy S23',
+      description: 'Flagship Samsung phone',
+      price: 420000,
+      rating: 4.8,
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Gw1LbHCTLzg8t1AEI7JOzUFV_s2xdewoCw&s',
+      link: 'https://kaspi.kz/shop/p/samsung-galaxy-s23-256gb-108869906/',
+      likes: 0,
+      categoryId: 5
     },
     {
       id: 3,
@@ -72,7 +94,6 @@ export class ProductService {
       categoryId: 1
     },
 
-    // --- LAPTOPS (categoryId: 2) ---
     {
       id: 6,
       name: 'MacBook Air M2',
@@ -129,7 +150,7 @@ export class ProductService {
       categoryId: 2
     },
 
-    // --- HEADPHONES (categoryId: 3) ---
+   
     {
       id: 11,
       name: 'AirPods Pro 2',
@@ -156,7 +177,6 @@ export class ProductService {
     { id: 14, name: 'Samsung Buds 2', description: 'Samsung earbuds', price: 60000, rating: 4.5, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWj8aPhp_rYMyfQV1uktZFZ9t_PL1-B3-Mog&s', link: 'https://kaspi.kz/', likes: 0, categoryId: 3 },
     { id: 15, name: 'Xiaomi Buds', description: 'Affordable buds', price: 25000, rating: 4.4, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAmyPFNUr7Z-LfGGxayOu_3iNmW6Ug6TuopA&s', link: 'https://kaspi.kz/', likes: 0, categoryId: 3 },
 
-    // --- TABLETS (categoryId: 4) ---
     { id: 16, name: 'iPad 10', description: 'Apple tablet', price: 350000, rating: 4.8, image: 'https://vrn-store.ru/wp-content/uploads/2022/12/ipad-2022-hero-pink-wifi-select-1181x865-1-500x366.png', link: 'https://kaspi.kz/', likes: 0, categoryId: 4 },
     { id: 17, name: 'Samsung Tab S9', description: 'Samsung tablet', price: 400000, rating: 4.7, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsuiOixJAOKi-Xx2yI5W8WLImehK1WarTuUw&s', link: 'https://kaspi.kz/', likes: 0, categoryId: 4 },
     { id: 18, name: 'Xiaomi Pad 6', description: 'Android tablet', price: 200000, rating: 4.6, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBY-zCvgH7jXGOXyoT7WPauab-R-_-sDUfUw&s', link: 'https://kaspi.kz/', likes: 0, categoryId: 4 },

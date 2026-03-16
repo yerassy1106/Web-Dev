@@ -1,14 +1,18 @@
 <div class="card">
-  <img [src]="product().image" alt="">
+  <img [src]="product().image" alt="product image">
 
   <h3>{{ product().name }}</h3>
   <p>{{ product().description }}</p>
-  <p>Price: {{ product().price }} ₸</p>
-  <p>Rating: ⭐ {{ product().rating }}</p>
+  <p class="rating">⭐ {{ product().rating }}</p>
+  <p class="price">{{ product().price.toLocaleString() }} ₸</p>
 
-  <p>❤ {{ product().likes }}</p>
+  <div class="likes">
+    <span>❤ {{ product().likes }}</span>
+  </div>
 
-  <button (click)="like()">Like</button>
-  <button (click)="remove()">Delete</button>
-  <button (click)="share()">Share</button>
+  <div class="actions">
+    <button class="btn-like" (click)="like()">Like</button>
+    <button class="btn-share" (click)="share()">Share</button>
+    <button class="btn-delete" (click)="remove()">🗑</button>
+  </div>
 </div>
