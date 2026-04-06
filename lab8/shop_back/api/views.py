@@ -1,7 +1,6 @@
 from django.http import JsonResponse
 from .models import Product, Category
 
-
 def products_list(request):
     products = Product.objects.all()
     data = []
@@ -14,7 +13,7 @@ def products_list(request):
             "description": p.description,
             "count": p.count,
             "is_active": p.is_active,
-            "category_id": p.category.id
+            "category": p.category.id
         })
 
     return JsonResponse(data, safe=False)
@@ -30,42 +29,31 @@ def product_detail(request, id):
             "description": p.description,
             "count": p.count,
             "is_active": p.is_active,
-            "category_id": p.category.id
+            "category": p.category.id
         }
         return JsonResponse(data)
     except Product.DoesNotExist:
-        return JsonResponse({"error": "Product not found"}, status=404)
+        return JsonResponse({"error": "Not found"}, status=404)
 
 
 def categories_list(request):
     categories = Category.objects.all()
-    data = []
-
-    for c in categories:
-        data.append({
-            "id": c.id,
-            "name": c.name
-        })
-
+    data = [{"id": c.id, "name": c.name} for c in categories]
     return JsonResponse(data, safe=False)
 
 
 def category_detail(request, id):
     try:
         c = Category.objects.get(id=id)
-        data = {
-            "id": c.id,
-            "name": c.name
-        }
-        return JsonResponse(data)
+        return JsonResponse({"id": c.id, "name": c.name})
     except Category.DoesNotExist:
-        return JsonResponse({"error": "Category not found"}, status=404)
+        return JsonResponse({"error": "Not found"}, status=404)
 
 
 def category_products(request, id):
     try:
         category = Category.objects.get(id=id)
-        products = Product.objects.filter(category=category)
+        products = category.products.all()
 
         data = []
         for p in products:
@@ -73,12 +61,8 @@ def category_products(request, id):
                 "id": p.id,
                 "name": p.name,
                 "price": p.price,
-                "description": p.description,
-                "count": p.count,
-                "is_active": p.is_active,
-                "category_id": p.category.id
             })
 
         return JsonResponse(data, safe=False)
     except Category.DoesNotExist:
-        return JsonResponse({"error": "Category not found"}, status=404)
+        return JsonResponse({"error": "Not found"}, status=404)
